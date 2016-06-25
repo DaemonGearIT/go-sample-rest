@@ -1,0 +1,8 @@
+package: go-sample-rest
+import:
+- package: github.com/labstack/echo
+- package: github.com/jinzhu/gorm
+- package: github.com/jinzhu/inflection
+- package: github.com/lib/pq
+  subpackages:
+  - hstore
