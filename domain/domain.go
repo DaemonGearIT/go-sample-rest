@@ -7,11 +7,11 @@ import (
 type (
 	Repository interface {
 		Exists(id uint64) bool
-		Create(interface) interface
-		Update(interface) interface
-		Delete(interface) bool
-		FindById(id uint64) interface
-		FindAll() []interface
+		Create(interface{}) interface{}
+		Update(interface{}) interface{}
+		Delete(interface{}) bool
+		FindById(id uint64) interface{}
+		FindAll() []interface{}
 	}
 
 	UserRepository interface {

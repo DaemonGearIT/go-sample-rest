@@ -1,4 +1,4 @@
-package: go-sample-rest
+package: github.com/DaemonGearIT/go-sample-rest
 import:
 - package: github.com/labstack/echo
 - package: github.com/jinzhu/gorm
@@ -6,3 +6,10 @@ import:
 - package: github.com/lib/pq
   subpackages:
   - hstore
+- package: github.com/labstack/gommon
+  subpackages:
+  - log
+- package: golang.org/x/net
+  subpackages:
+  - context
+- package: github.com/valyala/fasttemplate

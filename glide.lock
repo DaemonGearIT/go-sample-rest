@@ -1,8 +1,24 @@
-hash: 48213077d8b6d9c97be898d3f63f8ebe75efc3edba695125ce0217fa932a8023
-updated: 2016-06-25T13:40:30.920435114-03:00
+hash: f03421f0e2b70a8e87ac5425d8dfda3f761aa532c9702bb7c13088d6c8f04d86
+updated: 2016-06-25T20:45:42.19943307-03:00
 imports:
 - name: github.com/jinzhu/gorm
   version: 321d10b67b7218c5cf3bebc0c01fc8c4536c2bc7
+- name: github.com/jinzhu/inflection
+  version: 3272df6c21d04180007eb3349844c89a3856bc25
 - name: github.com/labstack/echo
   version: 08f714750872c45b6f3893a9803dc52822971ae3
+- name: github.com/labstack/gommon
+  version: 722aa12d41c236ce78ff48eac1cafe0107ecdc9d
+  subpackages:
+  - log
+- name: github.com/lib/pq
+  version: 4dd446efc17690bc53e154025146f73203b18309
+  subpackages:
+  - hstore
+- name: github.com/valyala/fasttemplate
+  version: 3b874956e03f1636d171bda64b130f9135f42cff
+- name: golang.org/x/net
+  version: bc3663df0ac92f928d419e31e0d2af22e683a5a2
+  subpackages:
+  - context
 devImports: []

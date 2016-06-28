@@ -4,30 +4,40 @@ import (
 	"fmt"
 	"github.com/fatih/color"
 	"gopkg.in/yaml.v2"
-	"io"
 	"io/ioutil"
-	"log"
-	"os"
 )
 
 const (
-	CONFIG_FILE_NAME = "./config.yml"
+	CONFIG_FILE_NAME = "conf.yml"
 )
 
-type Config struct {
-	Database struct {
-		dialect string
-		host    string
-		port    int
-		dbname  string
-		user    string
-		passwd  string
+type (
+	Configuration struct {
+		DATABASE struct {
+			DIALECT  string `yaml:"dialect"`
+			HOST     string `yaml:"host"`
+			PORT     int    `yaml:"port"`
+			DBNAME   string `yaml:"dbname"`
+			USER     string `yaml:"user"`
+			PASSWORD string `yaml:"passwd"`
+		} `yaml:"database"`
 	}
-}
+)
 
-func (c *Config) Configure() {
-	dat, err := ioutil.ReadFile(CONFIG_FILE_NAME)
+func Configure() Configuration {
+	c := Configuration{}
+
+	data, err := ioutil.ReadFile(CONFIG_FILE_NAME)
 	if err != nil {
-		color.Red(fmt.Sprintf("Config Errro : %v", err.Error()))
+		color.Red(fmt.Sprintf("Config Error 500 : %v\n", err.Error()))
 	}
+	color.Green(fmt.Sprintf("Data Loaded: \n%v\n", string(data)))
+
+	err = yaml.Unmarshal(data, &c)
+	if err != nil {
+		color.Red(fmt.Sprintf("Config Error 501 : %v\n", err.Error()))
+	}
+	color.Green(fmt.Sprintf("Config Loaded: %v\n", c))
+
+	return c
 }
